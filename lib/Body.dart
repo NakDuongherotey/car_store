@@ -51,7 +51,7 @@ class _IconBodyState extends State<IconBody> {
                  child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(50),
                   borderSide: const BorderSide(color: Colors.blueAccent, width: 4)
                   ),
                   prefixIcon: const Icon(Icons.search, color: Colors.blueAccent,),
