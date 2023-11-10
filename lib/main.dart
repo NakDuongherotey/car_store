@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'Body.dart';
+import 'body.dart';
 
 void main() async{
   await GetStorage.init();
@@ -10,20 +10,20 @@ void main() async{
 }
 
 class MyApp extends StatelessWidget {
-  final themedate = GetStorage();
+ // final themedate = GetStorage();
    MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-   bool darkmode = themedate.read('Darkmode');
-   bool darkmod = false;
-    return GetMaterialApp(
+   //bool darkmode = themedate.read('Darkmode');
+   //bool darkmod = false;
+    return const GetMaterialApp(
       title: 'Flutter Demo',
-       theme:darkmod
-       ?ThemeData.dark()
-       :ThemeData.light(),
+      //  theme:themedate.
+      //  ?ThemeData.dark()
+      //  :ThemeData.light(),
      // darkTheme: ThemeData.light(),
-      home: const IconBody(),
+      home:  IconBody(),
     );
   }
 }

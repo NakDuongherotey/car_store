@@ -1,8 +1,7 @@
-import 'package:badges/badges.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-
+import 'package:badges/badges.dart' as badges;
 import 'Drawer/Secordpage.dart';
 import 'Drawer/listpage.dart';
 import 'Icon.dart';
@@ -17,32 +16,32 @@ class IconBody extends StatefulWidget {
 }
 
 class _IconBodyState extends State<IconBody> {
-  bool isdarkmode = false;
-  GetStorage get ThemeData => GetStorage();
+  //bool isdarkmode = false;
+  //GetStorage get ThemeData => GetStorage();
   ProductControler productControler = Get.put(ProductControler());
   @override
   Widget build(BuildContext context) {
     
-    ThemeData.writeIfNull('DarkMode', false);
-    bool darkmode = ThemeData.read('DarkMode');
+  //  ThemeData.writeIfNull('DarkMode', false);
+   // bool darkmode = ThemeData.read('DarkMode');
     return GetBuilder<ProductControler>(
       init: productControler,
       builder: (contexts) {
         return Scaffold(
           appBar: AppBar(
-            actions: [
-              Switch(value:darkmode, onChanged: (value) {
-               setState(() {
-                 value;
-               });
-               ThemeData.write('Darkmode', value);
-              }),
+             actions: [
+              // Switch(value:darkmode , onChanged: (value) {
+              //  setState(() {
+              //    value;
+              //  });
+              //  ThemeData.write('Darkmode', value);
+              // }),
               IconButton(onPressed: (() {
                 Get.to(() => const ListCarScreen());
               }), icon: Badge(
-                badgeContent: Obx((() => Text(productControler.products.length.toString(),))),
+         label: Obx((() => Text(productControler.products.length.toString(),))),
               ))
-            ],
+             ],
           ),
           body: Column(
             children: [
@@ -104,7 +103,7 @@ class _IconBodyState extends State<IconBody> {
                         children: [
                           Container(
                              padding: const EdgeInsets.only(left: 140),
-                             child: const Icon(Icons.favorite, size: 30, color: Color.fromARGB(255, 223, 49, 49),),
+                             child: const Icon(Icons.favorite, size: 30, color: Colors.white),
                           ),
                           Container(
                            padding: const EdgeInsets.only(top: 150),
